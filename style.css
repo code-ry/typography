@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Silkscreen:wght@400;700&display=swap');
+
+@font-face {
+    font-family: "GABRWFFR";
+    src: url("GABRWFFR.TTF")
+}
+
+/* @keyframes red-to-yellow {
+    0% {
+        color: red;
+        font-size: 2rem;
+    }
+    50% {
+        color: blue;
+    }
+    100% {
+        color: yellow;
+        font-size: 3rem;
+    }
+} */
+@keyframes slide {
+    0% {
+        transform: translateY(100%);
+    }
+    50% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    color: #6cc1d6d0;
+    font-family: 'Silkscreen';
+    text-shadow: 2px 2px 4px black;
+    animation: red-to-yellow 3s both infinite alternate;
+}
+p {
+    font-size: 50px;
+    font-family: 'GABRWFFR' ;
+}
+p strong {
+    font-size: 2em;
+}
+.bg-image {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100px;
+    height: 150px;
+    color: rgb(0, 0, 0);
+    padding: 1rem;
+    /* background: url('https://placekeanu.com/500/300') green 35% center no-repeat; */
+    border-radius: 1rem 2rem 3rem 4rem;
+    background-size: cover;
+    box-shadow: 0px 0px 10px rgba(248, 8, 8, 0.683);
+    transition: width 1s;
+}
+
+.bg-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+.bg-image:hover {
+    width: 250px;
+    
+}
+
+.bg-image:hover .overlay{
+    animation: slide 1.5s;
+    
+}
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100px;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem 0.5rem 0 0;
+    background-color: rgba(255, 255, 0, 0.587);
+
+}
+
+.overlay span {
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.bg-image:hover .overlay span {
+    opacity: 1;
+}
+#boxes {
+    display: flex;
+    margin-top: 4rem;
+    width: 300px;
+    border: 1px solid red;
+    /* font-size: 0; */
+}
+
+#boxes div {
+    box-sizing: border-box;
+    width: 100px;
+    display: inline-block;
+    height: 100px;
+    padding: 5px;
+}
+
+#boxes div:nth-of-type(1) {
+    background-color: green;
+}
+#boxes div:nth-of-type(2) {
+    background-color: blue;
+}
+#boxes div:nth-of-type(3) {
+    background-color: orange;
+}
